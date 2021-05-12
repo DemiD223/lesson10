@@ -23,13 +23,14 @@ class TVController:
 
     def next_channel(self):
         self.cur_ch += 1
-        return self.turn_channel(self.cur_ch)
+        # if self.cur_ch < len(self.chs):
+        return self.turn_channel(self.cur_ch + 1)
 
     def previous_channel(self):
         self.cur_ch -= 1
         if self.cur_ch < 0:
             return self.first_channel()
-        return self.turn_channel(self.cur_ch)
+        return self.turn_channel(self.cur_ch+1)
 
     def current_channel(self):
         return self.chs[self.cur_ch]
